@@ -133,10 +133,10 @@ p{
 <div class="card">
 
     <div class="lang">
-        <button onclick="toggleLang()">ने / EN</button>
+        <button id="langBtn" onclick="toggleLang()">ने / EN</button>
     </div>
 
-    <img src="profile.jpg" class="profile">
+    <img src="profile.jpg" class="profile" alt="Profile">
 
     <h2 id="name">आनन्द काफ्ले</h2>
     <p id="title">आईटी इन्जिनियर विद्यार्थी</p>
@@ -170,27 +170,37 @@ p{
 
 <script>
 let nepali = true;
-function toggleLang(){
+
+function toggleLang() {
     nepali = !nepali;
 
-    document.getElementById("name").innerText = nepali ? "आनन्द काफ्ले" : "Aananda Kafle";
-    document.getElementById("title").innerText = nepali ? "आईटी इन्जिनियर विद्यार्थी" : "IT Engineering Student";
-    document.getElementById("address").innerText = nepali ? "📍 नेपाल" : "📍 Nepal";
-    document.getElementById("aboutTitle").innerText = nepali ? "मेरो बारेमा" : "About Me";
-    document.getElementById("aboutText").innerHTML = nepali ?
-    `<span>नेपाली:</span><br>
-    म १२ कक्षा उत्तीर्ण विद्यार्थी हुँ र संस्कृत विषय अध्ययन गरेको छु।
-    हाल म डिप्लोमा इन आईटी इन्जिनियरिङ अध्ययन गर्दैछु।
-    भविष्यमा म एनर्जी इन्जिनियर बन्न चाहन्छु।
-    पढाइसँगै म विभिन्न सीपहरू सिक्दै आफूलाई निरन्तर सुधार गर्दैछु।`
-    :
-    `<span>English:</span><br>
-    I am a Grade 12 graduate and studied Sanskrit.
-    Currently, I am pursuing a Diploma in IT Engineering.
-    My future goal is to become an Energy Engineer.
-    Along with my studies, I am continuously learning new skills.`;
+    // Update name, title, address
+    document.getElementById("name").textContent = nepali ? "आनन्द काफ्ले" : "Aananda Kafle";
+    document.getElementById("title").textContent = nepali ? "आईटी इन्जिनियर विद्यार्थी" : "IT Engineering Student";
+    document.getElementById("address").textContent = nepali ? "📍 नेपाल" : "📍 Nepal";
 
-    document.getElementById("save").innerText = nepali ? "📥 सम्पर्क सुरक्षित गर्नुहोस्" : "📥 Save Contact";
+    // Update About section
+    const aboutText = document.getElementById("aboutText");
+    document.getElementById("aboutTitle").textContent = nepali ? "मेरो बारेमा" : "About Me";
+    if(nepali){
+        aboutText.innerHTML = `<span>नेपाली:</span><br>
+        म १२ कक्षा उत्तीर्ण विद्यार्थी हुँ र संस्कृत विषय अध्ययन गरेको छु।
+        हाल म डिप्लोमा इन आईटी इन्जिनियरिङ अध्ययन गर्दैछु।
+        भविष्यमा म एनर्जी इन्जिनियर बन्न चाहन्छु।
+        पढाइसँगै म विभिन्न सीपहरू सिक्दै आफूलाई निरन्तर सुधार गर्दैछु।`;
+    } else {
+        aboutText.innerHTML = `<span>English:</span><br>
+        I am a Grade 12 graduate and studied Sanskrit.
+        Currently, I am pursuing a Diploma in IT Engineering.
+        My future goal is to become an Energy Engineer.
+        Along with my studies, I am continuously learning new skills.`;
+    }
+
+    // Update button text
+    document.getElementById("save").textContent = nepali ? "📥 सम्पर्क सुरक्षित गर्नुहोस्" : "📥 Save Contact";
+
+    // Update toggle button text dynamically
+    document.getElementById("langBtn").textContent = nepali ? "ने / EN" : "EN / ने";
 }
 </script>
 
