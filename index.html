@@ -8,50 +8,92 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+/* ===== GLOBAL ===== */
 body{
     margin:0;
-    font-family: Arial, sans-serif;
-    background: linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+    font-family:'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg,#050d14,#0a1f2c,#050d14);
     display:flex;
     justify-content:center;
     align-items:center;
     min-height:100vh;
-}
-.card{
-    background:#111;
     color:#fff;
+}
+
+/* ===== CARD ===== */
+.card{
     width:360px;
-    padding:22px;
-    border-radius:20px;
+    padding:24px;
+    border-radius:24px;
+    background: linear-gradient(160deg,#0b0b0b,#121212,#0b0b0b);
+    box-shadow:0 25px 60px rgba(0,0,0,.8);
+    border:1px solid rgba(0,255,255,.18);
     text-align:center;
-    box-shadow:0 15px 40px rgba(0,0,0,.6);
+    transition:.3s;
 }
-.logo{
-    width:60px;
-    margin-bottom:10px;
+.card:hover{
+    transform:scale(1.02);
 }
-.profile{
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    border:3px solid #0ff;
-}
+
+/* ===== LANGUAGE ===== */
 .lang{
     text-align:right;
 }
 .lang button{
     background:#0ff;
     border:none;
-    padding:5px 10px;
-    border-radius:15px;
+    padding:6px 12px;
+    border-radius:20px;
     cursor:pointer;
     font-size:12px;
+    font-weight:bold;
 }
-h2{margin:8px 0;}
-p{color:#ccc; font-size:14px;}
 
+/* ===== PROFILE ===== */
+.profile{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    border:3px solid #0ff;
+    margin-top:6px;
+}
+h2{
+    margin:10px 0 4px;
+    text-shadow:0 0 12px rgba(0,255,255,.6);
+}
+#title{
+    color:#0ff;
+    font-size:14px;
+}
+p{
+    color:#ccc;
+    font-size:13.5px;
+    margin:4px 0;
+}
+
+/* ===== ABOUT ===== */
+.about{
+    margin-top:18px;
+    text-align:left;
+}
+.about h3{
+    color:#0ff;
+    font-size:15px;
+    margin-bottom:6px;
+}
+.about p{
+    font-size:13px;
+    line-height:1.6;
+}
+.about span{
+    color:#0ff;
+    font-weight:bold;
+}
+
+/* ===== ICONS ===== */
 .icons{
     margin:18px 0;
+    text-align:center;
 }
 .icons a{
     display:inline-block;
@@ -60,7 +102,7 @@ p{color:#ccc; font-size:14px;}
     line-height:44px;
     margin:6px;
     border-radius:50%;
-    background:#222;
+    background:#1a1a1a;
     color:#0ff;
     font-size:20px;
     transition:.3s;
@@ -70,35 +112,19 @@ p{color:#ccc; font-size:14px;}
     color:#000;
     transform:scale(1.15);
 }
+
+/* ===== BUTTON ===== */
 .btn{
     display:block;
     margin-top:12px;
-    padding:10px;
+    padding:11px;
     background:#0ff;
     color:#000;
     text-decoration:none;
     border-radius:25px;
     font-weight:bold;
+    font-size:14px;
 }
-
-  .about {
-    margin-top: 20px;
-    padding: 15px;
-    background: #f4f4f4;
-    border-radius: 10px;
-    font-family: Arial, sans-serif;
-  }
-
-  .about h2 {
-    text-align: center;
-  }
-
-  .about p {
-    font-size: 14px;
-    line-height: 1.6;
-  }
-
-
 </style>
 </head>
 
@@ -113,38 +139,26 @@ p{color:#ccc; font-size:14px;}
     <img src="profile.jpg" class="profile">
 
     <h2 id="name">आनन्द काफ्ले</h2>
-    <p id="title">Digital Creator</p>
+    <p id="title">आईटी इन्जिनियर विद्यार्थी</p>
     <p id="address">📍 नेपाल</p>
-    <p id="phone">📞 +977 9811550524</p>
-    <p id="email">📧 aananda.kafle.official77@gmail.com</p>
+    <p>📞 +977 9811550524</p>
+    <p>📧 aananda.kafle.official77@gmail.com</p>
 
-    <section class="about">
-  <h2>About Me</h2>
-
-  <p>
-    <strong>English:</strong><br>
-    I am a 12th pass student. I completed my studies in Sanskrit.
-    Currently, I am studying Diploma in IT Engineering.
-    In the future, I aim to become an Energy Engineer.
-    Along with my studies, I am continuously learning new skills
-    and improving myself.
-  </p>
-
-  <p>
-    <strong>नेपाली:</strong><br>
-    म १२ कक्षा उत्तीर्ण विद्यार्थी हुँ।
-    मैले संस्कृत विषयमा अध्ययन पूरा गरेको छु।
-    हाल म डिप्लोमा इन आईटी इन्जिनियरिङ अध्ययन गरिरहेको छु।
-    भविष्यमा म एनर्जी इन्जिनियर बन्न चाहन्छु।
-    पढाइसँगै म अन्य सीपहरू पनि सिक्दै आफूलाई निरन्तर सुधार गर्दैछु।
-  </p>
-</section>
-
+    <div class="about">
+        <h3 id="aboutTitle">मेरो बारेमा</h3>
+        <p id="aboutText">
+            <span>नेपाली:</span><br>
+            म १२ कक्षा उत्तीर्ण विद्यार्थी हुँ र संस्कृत विषय अध्ययन गरेको छु।
+            हाल म डिप्लोमा इन आईटी इन्जिनियरिङ अध्ययन गर्दैछु।
+            भविष्यमा म एनर्जी इन्जिनियर बन्न चाहन्छु।
+            पढाइसँगै म विभिन्न सीपहरू सिक्दै आफूलाई निरन्तर सुधार गर्दैछु।
+        </p>
+    </div>
 
     <div class="icons">
         <a href="https://www.facebook.com/profile.php?id=61560189688732" target="_blank"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/aanandakafke77?igsh=c29nNnR0NzJibHlz" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.tiktok.com/@aanandaaashish.7?_r=1&_t=ZS-93dABkuz09x" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/aanandakafke77" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.tiktok.com/@aanandaaashish.7" target="_blank"><i class="fab fa-tiktok"></i></a>
         <a href="https://wa.me/9779811550524" target="_blank"><i class="fab fa-whatsapp"></i></a>
         <a href="mailto:aananda.kafle.official77@gmail.com"><i class="fas fa-envelope"></i></a>
         <a href="tel:+9779811550524"><i class="fas fa-phone"></i></a>
@@ -158,14 +172,27 @@ p{color:#ccc; font-size:14px;}
 let nepali = true;
 function toggleLang(){
     nepali = !nepali;
+
     document.getElementById("name").innerText = nepali ? "आनन्द काफ्ले" : "Aananda Kafle";
-    document.getElementById("title").innerText = nepali ? "डिजिटल क्रिएटर" : "Digital Creator";
+    document.getElementById("title").innerText = nepali ? "आईटी इन्जिनियर विद्यार्थी" : "IT Engineering Student";
     document.getElementById("address").innerText = nepali ? "📍 नेपाल" : "📍 Nepal";
+    document.getElementById("aboutTitle").innerText = nepali ? "मेरो बारेमा" : "About Me";
+    document.getElementById("aboutText").innerHTML = nepali ?
+    `<span>नेपाली:</span><br>
+    म १२ कक्षा उत्तीर्ण विद्यार्थी हुँ र संस्कृत विषय अध्ययन गरेको छु।
+    हाल म डिप्लोमा इन आईटी इन्जिनियरिङ अध्ययन गर्दैछु।
+    भविष्यमा म एनर्जी इन्जिनियर बन्न चाहन्छु।
+    पढाइसँगै म विभिन्न सीपहरू सिक्दै आफूलाई निरन्तर सुधार गर्दैछु।`
+    :
+    `<span>English:</span><br>
+    I am a Grade 12 graduate and studied Sanskrit.
+    Currently, I am pursuing a Diploma in IT Engineering.
+    My future goal is to become an Energy Engineer.
+    Along with my studies, I am continuously learning new skills.`;
+
     document.getElementById("save").innerText = nepali ? "📥 सम्पर्क सुरक्षित गर्नुहोस्" : "📥 Save Contact";
 }
 </script>
 
 </body>
 </html>
-
-
